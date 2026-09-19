@@ -3,38 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Website</title>
+  <title>Unlock Secret Content ✨</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header / Navigation -->
-  <header>
-    <div class="logo">Aarav Kumar</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <!-- STEP 1: Personal Info Form Screen -->
+  <div class="card" id="formCard">
+    <h2>Welcome! 👋</h2>
+    <p class="subtitle">Please enter your details to unlock the secret content.</p>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <h1>Welcome to My Website ✨</h1>
-    <p>Building clean, interactive web experiences.</p>
-    <button onclick="sayHello()">Click Me!</button>
-  </section>
+    <form id="infoForm" onsubmit="handleFormSubmit(event)">
+      <div class="input-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="e.g. Aarav Kumar" required>
+      </div>
 
-  <!-- About Section -->
-  <section id="about" class="content-section">
-    <h2>About Me</h2>
-    <p>Hello! I am exploring web development and building cool projects online.</p>
-  </section>
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="e.g. name@example.com" required>
+      </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>By Aarav Kumar 😊</p>
-  </footer>
+      <div class="input-group">
+        <label for="occupation">What do you do?</label>
+        <select id="occupation" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="Student">Student</option>
+          <option value="Professional">Working Professional</option>
+          <option value="Freelancer">Freelancer / Creator</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">Unlock Content 🚀</button>
+    </form>
+  </div>
+
+  <!-- STEP 2: Hidden Content Screen (Revealed after submission) -->
+  <div class="card hidden" id="contentCard">
+    <div class="success-icon">🎉</div>
+    <h2 id="welcomeGreeting">Access Granted!</h2>
+    <p id="userSummary" class="subtitle"></p>
+
+    <div class="secret-box">
+      <h3>📜 Secret VIP Content</h3>
+      <p>Thank you for registering your profile! Here is your exclusive access to our content hub:</p>
+      <ul>
+        <li>✨ Access to downloadable cheat sheets & resources</li>
+        <li>🚀 Early access to upcoming web projects</li>
+        <li>💡 Weekly tips and interactive guides</li>
+      </ul>
+      <a href="#" class="download-btn">Download Welcome Pack 📁</a>
+    </div>
+
+    <p class="footer-note">By Aarav Kumar 😊</p>
+  </div>
 
   <script src="script.js"></script>
 </body>
