@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unlock Secret Content ✨</title>
+  <title>Unlock Secret Content & Student Tips ✨</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
   <!-- STEP 1: Personal Info Form Screen -->
   <div class="card" id="formCard">
     <h2>Welcome! 👋</h2>
-    <p class="subtitle">Please enter your details to unlock the secret content.</p>
+    <p class="subtitle">Enter your details to unlock exclusive Student Tips & Study Hacks.</p>
 
     <form id="infoForm" onsubmit="handleFormSubmit(event)">
       <div class="input-group">
@@ -39,21 +39,59 @@
     </form>
   </div>
 
-  <!-- STEP 2: Hidden Content Screen (Revealed after submission) -->
-  <div class="card hidden" id="contentCard">
+  <!-- STEP 2: Hidden Content & Student Tips Screen -->
+  <div class="card hidden wide-card" id="contentCard">
     <div class="success-icon">🎉</div>
     <h2 id="welcomeGreeting">Access Granted!</h2>
     <p id="userSummary" class="subtitle"></p>
 
-    <div class="secret-box">
-      <h3>📜 Secret VIP Content</h3>
-      <p>Thank you for registering your profile! Here is your exclusive access to our content hub:</p>
-      <ul>
-        <li>✨ Access to downloadable cheat sheets & resources</li>
-        <li>🚀 Early access to upcoming web projects</li>
-        <li>💡 Weekly tips and interactive guides</li>
-      </ul>
-      <a href="#" class="download-btn">Download Welcome Pack 📁</a>
+    <!-- Navigation Tabs -->
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="switchTab('secret-tab')">📜 Secret Hub</button>
+      <button class="tab-btn" onclick="switchTab('tips-tab')">🎓 Student Tips & Study Hacks</button>
+    </div>
+
+    <!-- TAB 1: Secret VIP Content -->
+    <div id="secret-tab" class="tab-content active">
+      <div class="secret-box">
+        <h3>📜 Secret VIP Access</h3>
+        <p>Thank you for registering your profile! Here is your unlocked dashboard:</p>
+        <ul>
+          <li>✨ Downloadable cheat sheets & project blueprints</li>
+          <li>🚀 Early access to interactive web tools</li>
+          <li>💡 Weekly strategy guides and code templates</li>
+        </ul>
+        <a href="#" class="download-btn">Download Starter Kit 📁</a>
+      </div>
+    </div>
+
+    <!-- TAB 2: Student Tips & Hacks -->
+    <div id="tips-tab" class="tab-content">
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">⏱️</div>
+          <h4>The 25/5 Pomodoro Method</h4>
+          <p>Study uninterrupted for 25 minutes, then take a strict 5-minute break. After 4 sessions, take a longer 20-minute break to refresh your brain.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">🧠</div>
+          <h4>Feynman Technique</h4>
+          <p>Explain complex topics in simple language as if teaching a 10-year-old. If you get stuck, review your notes until you can explain it effortlessly.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">📅</div>
+          <h4>Spaced Repetition</h4>
+          <p>Review material at increasing intervals (Day 1, Day 3, Day 7, Day 14) to lock facts permanently into long-term memory instead of cramming.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">📝</div>
+          <h4>Active Recall</h4>
+          <p>After reading a page or topic, close the book and write down everything you remember from memory before checking for accuracy.</p>
+        </div>
+      </div>
     </div>
 
     <p class="footer-note">By Aarav Kumar 😊</p>
